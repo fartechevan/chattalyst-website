@@ -7,7 +7,7 @@ export const Testimonials = () => {
       name: "Sarah Johnson",
       role: "Marketing Director",
       company: "TechFlow Inc",
-      content: "ChatDaddy transformed our customer service. We saw a 300% increase in response rates and our customers love the instant support.",
+      content: "Chattalyst transformed our customer service. We saw a 300% increase in response rates and our customers love the instant support.",
       rating: 5,
       avatar: "SJ"
     },
@@ -23,7 +23,7 @@ export const Testimonials = () => {
       name: "Emma Rodriguez",
       role: "Sales Manager",
       company: "RetailMax",
-      content: "Our sales conversion increased by 45% after implementing ChatDaddy's WhatsApp automation. It's a game-changer!",
+      content: "Our sales conversion increased by 45% after implementing Chattalyst's WhatsApp automation. It's a game-changer!",
       rating: 5,
       avatar: "ER"
     }

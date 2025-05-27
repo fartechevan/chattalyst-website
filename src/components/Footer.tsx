@@ -1,4 +1,3 @@
-
 import { MessageSquare, Twitter, Linkedin, Github } from "lucide-react";
 
 export const Footer = () => {
@@ -16,7 +15,7 @@ export const Footer = () => {
           <div className="col-span-2">
             <div className="flex items-center mb-4">
               <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                ChatDaddy
+                Chattalyst
               </div>
             </div>
             <p className="text-gray-400 mb-6 max-w-sm">
@@ -54,7 +53,7 @@ export const Footer = () => {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 ChatDaddy. All rights reserved.
+            © 2024 Chattalyst. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm mt-4 md:mt-0">
             Built with ❤️ for modern businesses

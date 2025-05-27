@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -10,7 +9,7 @@ export const CTA = () => {
           Ready to Transform Your WhatsApp Business?
         </h2>
         <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-          Join thousands of businesses already using ChatDaddy to automate their customer communication 
+          Join thousands of businesses already using Chattalyst to automate their customer communication 
           and boost their sales. Start your free trial today!
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
