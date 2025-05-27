@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import logoUrl from "../../assets/chattalyst-logo.png";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +13,7 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Chattalyst
-              </div>
+              <img src={logoUrl} alt="Chattalyst Logo" className="h-16 w-auto" />
             </div>
           </div>
 
