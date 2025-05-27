@@ -13,11 +13,17 @@ export const Hero = () => {
               #1 WhatsApp Business Solution
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
               Automate Your
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> WhatsApp </span>
               Business
             </h1>
+            
+            <div className="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Talk and Transform
+              </span>
+            </div>
             
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               Transform your customer communication with AI-powered WhatsApp automation. 
