@@ -32,9 +32,11 @@ export const Navigation = () => {
                 Login
               </Button>
             </a>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-              Start Free Trial
-            </Button>
+            <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                Start Free Trial
+              </Button>
+            </a>
           </div>
 
           <div className="md:hidden">
@@ -58,9 +60,11 @@ export const Navigation = () => {
                 <a href="https://app.chattalyst.com/dashboard" target="_blank" rel="noopener noreferrer" className="block w-full">
                   <Button variant="ghost" className="w-full mb-2">Login</Button>
                 </a>
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">
-                  Start Free Trial
-                </Button>
+                <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer" className="block w-full">
+                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">
+                    Start Free Trial
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

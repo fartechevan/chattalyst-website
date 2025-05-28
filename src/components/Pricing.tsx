@@ -6,7 +6,7 @@ export const Pricing = () => {
   const plans = [
     {
       name: "Starter",
-      price: "$29",
+      price: "RM 499",
       period: "/month",
       description: "Perfect for small businesses getting started",
       features: [
@@ -20,7 +20,7 @@ export const Pricing = () => {
     },
     {
       name: "Professional",
-      price: "$79",
+      price: "RM 999",
       period: "/month",
       description: "Best for growing businesses",
       features: [
@@ -36,8 +36,8 @@ export const Pricing = () => {
     },
     {
       name: "Enterprise",
-      price: "$199",
-      period: "/month",
+      price: "Call Now!",
+      period: "",
       description: "For large organizations",
       features: [
         "Unlimited messages",
@@ -103,15 +103,17 @@ export const Pricing = () => {
                 ))}
               </ul>
 
-              <Button 
-                className={`w-full py-3 ${
-                  plan.popular 
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700' 
-                    : 'bg-gray-900 hover:bg-gray-800'
-                }`}
-              >
-                Get Started
-              </Button>
+              <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer" className="w-full">
+                <Button 
+                  className={`w-full py-3 ${
+                    plan.popular 
+                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700' 
+                      : 'bg-gray-900 hover:bg-gray-800'
+                  }`}
+                >
+                  Start Free Trial
+                </Button>
+              </a>
             </div>
           ))}
         </div>

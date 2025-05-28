@@ -14,13 +14,12 @@ export const CTA = () => {
           and boost their sales. Start your free trial today!
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg">
-            Start Free Trial
-            <ArrowRight size={20} className="ml-2" />
-          </Button>
-          <Button size="lg" className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg">
-            Schedule Demo
-          </Button>
+          <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg">
+              Start Free Trial
+              <ArrowRight size={20} className="ml-2" />
+            </Button>
+          </a>
         </div>
         <p className="text-blue-100 text-sm mt-6">
           No setup fees • 14-day free trial • Cancel anytime

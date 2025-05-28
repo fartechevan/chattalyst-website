@@ -31,13 +31,11 @@ export const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg">
-                Start Free Trial
-              </Button>
-              <Button size="lg" variant="outline" className="border-2 border-gray-300 px-8 py-4 text-lg">
-                <Play size={20} className="mr-2" />
-                Watch Demo
-              </Button>
+              <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg">
+                  Start Free Trial
+                </Button>
+              </a>
             </div>
 
             <div className="flex items-center space-x-6 text-sm text-gray-600">
