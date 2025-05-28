@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -17,7 +18,7 @@ export const CTA = () => {
             Start Free Trial
             <ArrowRight size={20} className="ml-2" />
           </Button>
-          <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg">
+          <Button size="lg" className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg">
             Schedule Demo
           </Button>
         </div>
