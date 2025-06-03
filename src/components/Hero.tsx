@@ -1,44 +1,76 @@
 
 import { Button } from "@/components/ui/button";
-import { Play, CheckCircle, MessageSquare } from "lucide-react";
+import { Play, CheckCircle, MessageSquare, Bot, RefreshCw } from "lucide-react";
 
 export const Hero = () => {
   return (
     <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
-              <MessageSquare size={16} className="mr-2" />
-              #1 WhatsApp Business Solution
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
-              Automate Your
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> WhatsApp </span>
-              Business
-            </h1>
-            
-            <div className="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Talk and Transform
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* New UI Section from Image - Start */}
+        <div className="mb-12">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4">
+            <span className="text-purple-600">Autonomous Service</span>
+            <br />
+            <span className="text-gray-900">with Human-Like Experience</span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+            Pioneering Agentic AI for transformative service automation and human-like customer experiences.
+          </p>
+          <div className="max-w-2xl mx-auto mb-8">
+            <div className="flex items-center bg-white border-2 border-purple-500 rounded-full p-3 shadow-lg">
+              <Bot size={28} className="text-purple-600 mx-3" />
+              <span className="text-gray-600 text-lg">
+                Curious about AA - autonomous automation? Let's chat!
               </span>
             </div>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-4">
+            <Button variant="outline" size="icon" className="rounded-full border-gray-300 hover:bg-gray-100">
+              <RefreshCw size={20} className="text-gray-700" />
+            </Button>
+            <Button className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base">
+              Book Demo Today
+            </Button>
+            <Button className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base">
+              Try Our VoiceX
+            </Button>
+            <Button className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base">
+              Explore Case Studies
+            </Button>
+            <Button className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base">
+              Agentic AI Advantage
+            </Button>
+          </div>
+        </div>
+        {/* New UI Section from Image - End */}
+        
+        {/* Combined Hero Content - Start */}
+        {/* The right side (image/chat mockup) will be part of this grid */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center pt-12 border-t border-gray-200">
+          {/* Left side content - primarily from the original second section, but integrated */}
+          <div className="animate-fade-in text-left"> 
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+              <MessageSquare size={16} className="mr-2" />
+              #1 WhatsApp Business Solution for Autonomous Service
+            </div>
             
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Transform your customer communication with AI-powered WhatsApp automation. 
-              Increase sales, reduce response time, and scale your business effortlessly.
+            {/* The main H1 and paragraph are now from the new UI section above */}
+            {/* We can add a more specific CTA here or benefits */}
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              Leverage our leading Agentic AI to automate customer interactions seamlessly, 
+              boost efficiency, and provide an unparalleled human-like experience, 24/7.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              {/* This button can be styled to match the new UI's buttons or kept distinct */}
               <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg">
-                  Start Free Trial
+                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg shadow-lg">
+                  Start Your Free Trial Now
                 </Button>
               </a>
             </div>
 
-            <div className="flex items-center space-x-6 text-sm text-gray-600">
+            <div className="flex items-center space-x-6 text-sm text-gray-700">
               <div className="flex items-center">
                 <CheckCircle size={16} className="text-green-500 mr-2" />
                 No setup fees
