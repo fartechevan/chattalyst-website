@@ -1,11 +1,33 @@
 
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom"; // Import Link and useLocation
 import logoUrl from "../../assets/chattalyst-logo.png";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"; // Assuming this is the correct path
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  const navLinks = [
+    { name: "Features", hrefBase: "#features" },
+    { name: "Pricing", hrefBase: "#pricing" },
+    // Solutions dropdown is handled separately
+    { name: "Testimonials", hrefBase: "#testimonials" },
+    { name: "Contact", hrefBase: "#contact" },
+  ];
+
+  const industrySolutions = [
+    { name: "F&B", href: "/fnb" }, // Updated href to point to the new page
+  ];
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
@@ -13,16 +35,41 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <img src={logoUrl} alt="Chattalyst Logo" className="h-16 w-auto" />
+              <Link to="/"> {/* Wrap logo with Link to homepage */}
+                <img src={logoUrl} alt="Chattalyst Logo" className="h-16 w-auto" />
+              </Link>
             </div>
           </div>
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors">Features</a>
-              <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors">Pricing</a>
-              <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">Testimonials</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+              {navLinks.map((link) => (
+                <a 
+                  key={link.name}
+                  href={isHomePage ? link.hrefBase : `/${link.hrefBase}`} 
+                  className="text-gray-700 hover:text-blue-600 transition-colors" // Reverted hover color
+                >
+                  {link.name}
+                </a>
+              ))}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="flex items-center text-gray-700 hover:text-blue-600 transition-colors"> {/* Reverted hover color */}
+                    Solutions
+                    <ChevronDown size={16} className="ml-1" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="bg-white shadow-lg rounded-md mt-2 py-1 w-56">
+                  {industrySolutions.map((solution) => (
+                    <DropdownMenuItem key={solution.name} asChild>
+                      {/* For industry solutions that are separate pages, Link is better */}
+                      <Link to={solution.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600"> {/* Reverted hover color */}
+                        {solution.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
 
@@ -52,10 +99,39 @@ export const Navigation = () => {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <a href="#features" className="block px-3 py-2 text-gray-700">Features</a>
-              <a href="#pricing" className="block px-3 py-2 text-gray-700">Pricing</a>
-              <a href="#testimonials" className="block px-3 py-2 text-gray-700">Testimonials</a>
-              <a href="#contact" className="block px-3 py-2 text-gray-700">Contact</a>
+              {navLinks.map((link) => (
+                <a 
+                  key={link.name}
+                  href={isHomePage ? link.hrefBase : `/${link.hrefBase}`} 
+                  className="block px-3 py-2 text-gray-700 hover:text-blue-600" /* Reverted hover color */
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+              <div>
+                <button
+                  onClick={() => setSolutionsOpen(!solutionsOpen)}
+                  className="w-full flex justify-between items-center px-3 py-2 text-gray-700 hover:text-blue-600" /* Reverted hover color */
+                >
+                  Solutions
+                  <ChevronDown size={16} className={`transform transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {solutionsOpen && (
+                  <div className="pl-4">
+                    {industrySolutions.map((solution) => (
+                       <Link // Use Link for mobile solutions too
+                        key={solution.name}
+                        to={solution.href}
+                        className="block px-3 py-2 text-gray-600 hover:text-blue-600" /* Reverted hover color */
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {solution.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
               <div className="pt-4 pb-3 border-t border-gray-200">
                 <a href="https://app.chattalyst.com/dashboard" target="_blank" rel="noopener noreferrer" className="block w-full">
                   <Button variant="ghost" className="w-full mb-2">Login</Button>

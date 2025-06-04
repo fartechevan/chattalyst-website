@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -52,6 +53,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+        // Custom colors inspired by Yellow.ai
+        yellowai_primary_purple: '#5D2DE1',
+        yellowai_dark_purple: '#2F006B',
+        yellowai_accent_yellow: '#FFD15C',
+        yellowai_light_bg: '#F8F9FA',
+        yellowai_text_dark: '#1E293B', // Example dark text
+        yellowai_text_light: '#FFFFFF',
+
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -92,5 +101,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 } satisfies Config;

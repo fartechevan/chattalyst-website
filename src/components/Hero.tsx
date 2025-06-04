@@ -32,9 +32,6 @@ export const Hero = () => {
               Book Demo Today
             </Button>
             <Button className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base">
-              Try Our VoiceX
-            </Button>
-            <Button className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base">
               Explore Case Studies
             </Button>
             <Button className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base">
