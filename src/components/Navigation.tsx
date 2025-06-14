@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom"; // Import Link and useLocation
+import { Link, useLocation, useNavigate } from "react-router-dom"; // Import Link, useLocation, and useNavigate
 import logoUrl from "../../assets/chattalyst-logo.png";
 import {
   DropdownMenu,
@@ -15,6 +15,7 @@ export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate(); // Initialize useNavigate
   const isHomePage = location.pathname === '/';
 
   const navLinks = [
@@ -27,6 +28,7 @@ export const Navigation = () => {
 
   const industrySolutions = [
     { name: "F&B", href: "/fnb" }, // Updated href to point to the new page
+    { name: "Insurance Agency", href: "/insurance" },
   ];
 
   return (
@@ -61,11 +63,15 @@ export const Navigation = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start" className="bg-white shadow-lg rounded-md mt-2 py-1 w-56">
                   {industrySolutions.map((solution) => (
-                    <DropdownMenuItem key={solution.name} asChild>
-                      {/* For industry solutions that are separate pages, Link is better */}
-                      <Link to={solution.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600"> {/* Reverted hover color */}
-                        {solution.name}
-                      </Link>
+                    <DropdownMenuItem
+                      key={solution.name}
+                      onSelect={() => {
+                        console.log(`${solution.name} DropdownMenuItem selected, attempting to navigate to: ${solution.href}`);
+                        navigate(solution.href);
+                      }}
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 cursor-pointer"
+                    >
+                      {solution.name}
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>

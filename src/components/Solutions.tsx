@@ -1,14 +1,16 @@
-import { Utensils } from "lucide-react";
+import { Utensils, ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom"; // Import Link
 
 interface SolutionCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
   href: string;
+  onClick?: () => void; // Add onClick for logging
 }
 
-const SolutionCard: React.FC<SolutionCardProps> = ({ icon, title, description, href }) => (
-  <a href={href} className="block bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+const SolutionCard: React.FC<SolutionCardProps> = ({ icon, title, description, href, onClick }) => (
+  <Link to={href} onClick={onClick} className="block bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
     <div className="flex items-center mb-4">
       <div className="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
         {icon}
@@ -16,7 +18,7 @@ const SolutionCard: React.FC<SolutionCardProps> = ({ icon, title, description, h
       <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
     </div>
     <p className="text-gray-600">{description}</p>
-  </a>
+  </Link>
 );
 
 export const Solutions = () => {
@@ -25,7 +27,13 @@ export const Solutions = () => {
       icon: <Utensils size={24} />,
       title: "F&B",
       description: "Innovative solutions for the food and beverage sector",
-      href: "#solutions-fnb",
+      href: "/fnb", // Changed to route to /fnb
+    },
+    {
+      icon: <ShieldCheck size={24} />,
+      title: "Insurance Agency",
+      description: "Streamline operations and enhance customer engagement for insurance agencies.",
+      href: "/insurance",
     },
   ];
 
@@ -49,6 +57,13 @@ export const Solutions = () => {
               title={industry.title}
               description={industry.description}
               href={industry.href}
+              onClick={() => {
+                if (industry.title === "F&B") {
+                  console.log(`Solutions section F&B card clicked, navigating to: ${industry.href}`);
+                } else if (industry.title === "Insurance Agency") {
+                  console.log(`Solutions section Insurance Agency card clicked, navigating to: ${industry.href}`);
+                }
+              }}
             />
           ))}
         </div>
