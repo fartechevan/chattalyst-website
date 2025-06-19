@@ -21,13 +21,13 @@ export const PortalOutlook: React.FC<PortalOutlookProps> = () => {
   };
 
   const features = [
-    { name: "Dashboard & Analytics", description: "A central hub for accessing all features and an overview of your ecosystem's performance. Visualize key metrics, track performance, and gain actionable insights from your data.", icon: BarChart3, image: "dist/assets/prd/prd_main.png" },
-    { name: "Chat Module", description: "Engage with customers in real-time, automate responses, and manage conversations efficiently.", icon: MessageSquare, image: "dist/assets/prd/prd_ai_agent.png" },
-    { name: "Broadcasting Module", description: "Send targeted marketing messages, promotions, and updates to your customer segments.", icon: Zap, image: "dist/assets/prd/prd_broadcast.png" },
-    { name: "Mini CRM", description: "Manage customer data, track interactions, and build detailed profiles for personalized engagement.", icon: BarChart3, image: "dist/assets/prd/prd_crm.png" },
-    { name: "AI Model Management", description: "Train, update, and manage your custom AI models to ensure they align with your business needs.", icon: Clock, image: "dist/assets/prd/prd_ai_agent.png" },
-    { name: "Sentiment Statistic", description: "Analyze customer sentiment from conversations to identify trends and areas for improvement.", icon: Shield, image: "dist/assets/prd/prd_sentiment.png" },
-    { name: "Administration and Setting", description: "Configure your ecosystem, manage user access, and customize settings to fit your workflow.", icon: MessageSquare, image: "dist/assets/prd/prd_admin.png" } // Using MessageSquare as a placeholder icon
+    { name: "Dashboard & Analytics", description: "A central hub for accessing all features and an overview of your ecosystem's performance. Visualize key metrics, track performance, and gain actionable insights from your data.", icon: BarChart3, image: "/prd/prd_main.png" },
+    { name: "Chat Module", description: "Engage with customers in real-time, automate responses, and manage conversations efficiently.", icon: MessageSquare, image: "/prd/prd_ai_agent.png" },
+    { name: "Broadcasting Module", description: "Send targeted marketing messages, promotions, and updates to your customer segments.", icon: Zap, image: "/prd/prd_broadcast.png" },
+    { name: "Mini CRM", description: "Manage customer data, track interactions, and build detailed profiles for personalized engagement.", icon: BarChart3, image: "/prd/prd_crm.png" },
+    { name: "AI Model Management", description: "Train, update, and manage your custom AI models to ensure they align with your business needs.", icon: Clock, image: "/prd/prd_ai_agent.png" },
+    { name: "Sentiment Statistic", description: "Analyze customer sentiment from conversations to identify trends and areas for improvement.", icon: Shield, image: "/prd/prd_sentiment.png" },
+    { name: "Administration and Setting", description: "Configure your ecosystem, manage user access, and customize settings to fit your workflow.", icon: MessageSquare, image: "/prd/prd_admin.png" } // Using MessageSquare as a placeholder icon
   ];
 
   return (
