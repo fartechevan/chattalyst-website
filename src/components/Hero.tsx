@@ -1,8 +1,36 @@
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input"; // Added Input import
 import { Play, CheckCircle, MessageSquare, Bot, RefreshCw } from "lucide-react";
+import { useState } from "react"; // Added useState import
 
 export const Hero = () => {
+  const [isChatting, setIsChatting] = useState(false);
+  const [chatMessage, setChatMessage] = useState("");
+
+  const handleChatClick = (message?: string) => {
+    setIsChatting(true);
+    if (message) {
+      setChatMessage(message);
+    }
+  };
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChatMessage(event.target.value);
+  };
+
+  const handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter" && chatMessage.trim() !== "") {
+      event.preventDefault();
+      const whatsappNumber = "60175168607";
+      const encodedMessage = encodeURIComponent(chatMessage);
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      window.open(whatsappUrl, "_blank");
+      setChatMessage("");
+      setIsChatting(false);
+    }
+  };
+
   return (
     <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -17,24 +45,45 @@ export const Hero = () => {
             Pioneering Agentic AI for transformative service automation and human-like customer experiences.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
-            <div className="flex items-center bg-white border-2 border-purple-500 rounded-full p-3 shadow-lg">
-              <Bot size={28} className="text-purple-600 mx-3" />
-              <span className="text-gray-600 text-lg">
-                Curious about AA - autonomous automation? Let's chat!
-              </span>
+            <div 
+              className="flex items-center bg-white border-2 border-purple-500 rounded-full p-2 shadow-lg cursor-pointer min-h-[60px]" // Adjusted padding and added min-height for consistency
+              onClick={!isChatting ? () => handleChatClick() : undefined} // Only allow click if not already chatting, and call without arguments
+            >
+              <Bot size={28} className="text-purple-600 mx-3 flex-shrink-0" />
+              {isChatting ? (
+                <Input
+                  type="text"
+                  value={chatMessage}
+                  onChange={handleInputChange}
+                  onKeyDown={handleInputKeyDown}
+                  placeholder="Type your message and press Enter..."
+                  className="text-lg border-none focus:ring-0 focus-visible:ring-offset-0 focus-visible:ring-0 flex-grow bg-transparent shadow-none p-0 h-auto"
+                  autoFocus
+                />
+              ) : (
+                <span className="text-gray-600 text-lg">
+                  Curious about AA - autonomous automation? Let's chat!
+                </span>
+              )}
             </div>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-4">
-            <Button variant="outline" size="icon" className="rounded-full border-gray-300 hover:bg-gray-100">
-              <RefreshCw size={20} className="text-gray-700" />
-            </Button>
-            <Button className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base">
+            <Button 
+              className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base"
+              onClick={() => handleChatClick("Book Demo Today")}
+            >
               Book Demo Today
             </Button>
-            <Button className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base">
+            <Button 
+              className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base"
+              onClick={() => handleChatClick("Explore Case Studies")}
+            >
               Explore Case Studies
             </Button>
-            <Button className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base">
+            <Button 
+              className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base"
+              onClick={() => handleChatClick("Agentic AI Advantage")}
+            >
               Agentic AI Advantage
             </Button>
           </div>

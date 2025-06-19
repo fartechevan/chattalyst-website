@@ -1,23 +1,38 @@
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { useState } from "react";
+import { ArrowRight } from "lucide-react"; // Added ArrowRight import
+
 export const FnbSolution = () => {
+  const [open, setOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     // Apply light gradient similar to Hero section
     <div className="py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden lg:py-24">
       <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
-        {/* Section 1: Title - Reverted to original color scheme */}
+        {/* Section 1: Title - Styled like Hero */}
         <div className="text-center mb-16 pt-10">
-          <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-            <span className="block xl:inline">Enhancing F&B with</span>{' '}
-            <span className="block text-blue-600 xl:inline">AI Ecosystem</span> {/* Original blue color */}
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <span className="text-purple-600">Enhancing F&B with</span>
+            <br />
+            <span className="text-gray-900">AI Ecosystem</span>
           </h1>
-          <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl"> {/* Original text colors */}
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10">
             Leveraging LLM and Vision AI to revolutionize your Food & Beverage operations.
           </p>
         </div>
 
-        {/* Section 2: Why Build Your Own Ecosystem? - Reverted to light background and original text colors */}
-        <div className="mb-16 p-8 bg-white rounded-xl shadow-lg"> {/* Light background, added padding and shadow */}
-          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl mb-8 text-center">
-            Why Build Your Own Ecosystem?
+        {/* Section 2: Why Build Your Own Ecosystem? */}
+        <div className="mb-16 p-8 bg-white rounded-xl shadow-lg">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            Why Build <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Your Own Ecosystem?</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
@@ -39,56 +54,37 @@ export const FnbSolution = () => {
           </div>
         </div>
 
-        {/* Section 3: F&B Pain Points - Reverted to original card style and text colors */}
+        {/* Section 3: F&B Pain Points - Styled cards */}
         <div className="mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl mb-8 text-center">
-            F&B Pain Points: What Keeps You Up at Night?
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            F&B Pain Points: <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">What Keeps You Up?</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg shadow"> {/* Original card style */}
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Labor Shortages & Rising Costs</h3>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Difficulty hiring and retaining skilled workers.</li>
-                <li>Rising wages and operational costs impacting profitability.</li>
-                <li>Staffing gaps affecting service quality and customer satisfaction.</li>
-              </ul>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow"> {/* Original card style */}
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">E-Commerce Competition</h3>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Shift to online delivery (GrabFood, Food Panda) requires new infrastructure.</li>
-                <li>Rise of cloud kitchens focusing on delivery.</li>
-                <li>High delivery costs from third-party platforms.</li>
-              </ul>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow"> {/* Original card style */}
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Improving Customer Experience</h3>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>High initial investment in digital infrastructure.</li>
-                <li>Ensuring customer happiness in outlets.</li>
-                <li>Managing expectations for speed, quality, and personalization.</li>
-              </ul>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow"> {/* Original card style */}
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Labor Management & Compliance</h3>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Ensuring hygiene compliance with SOPs.</li>
-                <li>Effectiveness of random auditing.</li>
-                <li>Need for automation in AI-powered restaurants.</li>
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> {/* Adjusted lg:grid-cols-2 to md:grid-cols-2 for 4 items */}
+            {[
+              { title: "Labor Shortages & Rising Costs", items: ["Difficulty hiring and retaining skilled workers.", "Rising wages and operational costs impacting profitability.", "Staffing gaps affecting service quality and customer satisfaction."] },
+              { title: "E-Commerce Competition", items: ["Shift to online delivery (GrabFood, Food Panda) requires new infrastructure.", "Rise of cloud kitchens focusing on delivery.", "High delivery costs from third-party platforms."] },
+              { title: "Improving Customer Experience", items: ["High initial investment in digital infrastructure.", "Ensuring customer happiness in outlets.", "Managing expectations for speed, quality, and personalization."] },
+              { title: "Labor Management & Compliance", items: ["Ensuring hygiene compliance with SOPs.", "Effectiveness of random auditing.", "Need for automation in AI-powered restaurants."] }
+            ].map(point => (
+              <div key={point.title} className="p-8 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{point.title}</h3>
+                <ul className="list-disc list-inside text-gray-600 space-y-1 leading-relaxed">
+                  {point.items.map(item => <li key={item}>{item}</li>)}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Section 4: AI Automation Solution at Outlet - Reverted to light background and original text colors */}
+        {/* Section 4: AI Automation Solution at Outlet */}
         <div className="mb-16 text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl mb-8">
-            AI Automation Solution at Your Outlet
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+            AI Automation <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Solution at Your Outlet</span>
           </h2>
           <p className="text-xl text-gray-600 mb-4">
             Utilizing cutting-edge AI Vision technology to enhance efficiency and customer experience.
           </p>
-          <div className="bg-gray-100 p-8 rounded-lg shadow"> {/* Original background and styling */}
+          <div className="bg-white p-8 rounded-xl shadow-lg"> {/* Changed from bg-gray-100 */}
             <p className="text-gray-700 mb-4 text-lg">
               Our AI Vision solutions are designed to bring intelligent automation directly to your F&B outlets. This technology can be applied to various aspects of your operations, including:
             </p>
@@ -105,13 +101,12 @@ export const FnbSolution = () => {
           </div>
         </div>
 
-        {/* Section 5: Build Your Own Food Delivery - Applying stronger gradient */}
+        {/* Section 5: Build Your Own Food Delivery */}
         <div className="mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl mb-8 text-center">
-            Build Your Own Food Delivery Platform
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+            Build Your Own <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Food Delivery Platform</span>
           </h2>
-          {/* Applying a stronger gradient and ensuring text is light for contrast */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 md:p-12 rounded-xl shadow-xl text-white"> {/* Stronger gradient, more padding, rounded-xl, shadow-xl, white text */}
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 md:p-12 rounded-xl shadow-xl text-white">
             <p className="text-xl mb-6 text-center opacity-90"> {/* Centered text, opacity */}
               Remember the first slide? You don't own the customer on third-party platforms.
             </p>
@@ -125,10 +120,10 @@ export const FnbSolution = () => {
           </div>
         </div>
 
-        {/* Section 6: Automation Modules - Reverted to original card style and text colors */}
+        {/* Section 6: Automation Modules - Styled cards */}
         <div className="mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl mb-12 text-center">
-            Automation Modules: Futureproof Your Customer Experience
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            Automation Modules: <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Futureproof Your CX</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -136,12 +131,11 @@ export const FnbSolution = () => {
               { title: "Mini CRM", items: ["Upload Contacts from excel", "Track opportunity status", "Record conversation and interest", "Create campaign", "Customer reactivation"] },
               { title: "Flow Creation", items: ["Marketing content sharing", "Selection of leads for appointments", "Scheduling of tasks"] },
               { title: "Appointment Agent", items: ["Initiates appointments with human-like conversation", "Creates Gmail appointments", "Attaches interaction history"] },
-              { title: "Sentiment Agent", items: ["Detects conversation health", "Tags high potential leads", "Detects urgent requests"] },
-              { title: "Analytics & Reporting", items: ["Conversation logs", "Conversion rate tracking", "Traffic and sentiment analysis", "Topic monitoring"] }
+              { title: "Sentiment Agent", items: ["Conversation logs", "Conversion rate tracking", "Traffic and sentiment analysis", "Topic monitoring"] }
             ].map((module) => (
-              <div key={module.title} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"> {/* Original card style */}
-                <h3 className="text-xl font-semibold text-blue-700 mb-3">{module.title}</h3> {/* Original text color */}
-                <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm">
+              <div key={module.title} className="p-8 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{module.title}</h3>
+                <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm leading-relaxed">
                   {module.items.map(item => <li key={item}>{item}</li>)}
                 </ul>
               </div>
@@ -149,57 +143,56 @@ export const FnbSolution = () => {
           </div>
         </div>
 
-        {/* Section 7: Ecosystem Functionalities - Reverted to original card style and text colors */}
+        {/* Section 7: Ecosystem Functionalities - Styled cards */}
         <div className="mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl mb-8 text-center">
-            Ecosystem Functionalities
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+            Ecosystem <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Functionalities</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"> {/* Increased gap */}
             {[
               { title: "Customer Acquisition", details: "Attract potential customers via marketing content and engage them with 24/7 Q&A on products/services." },
               { title: "Customer Engagement", details: "Record interaction details and transition leads with human-like appointment making integrated with external calendars." },
               { title: "Customer Transition", details: "Seamlessly move potential customers through your sales funnel, from initial contact to confirmed appointments." },
               { title: "Customer Maintenance", details: "Re-activate existing customers with new product intros, cross-selling, and maintain relationships through your CRM and ecosystem portal." }
             ].map(func => (
-              <div key={func.title} className="bg-gray-50 p-6 rounded-lg shadow"> {/* Original card style */}
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">{func.title}</h3>
-                <p className="text-sm text-gray-600">{func.details}</p>
+              <div key={func.title} className="p-8 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{func.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{func.details}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Section 8: Portal Outlook - Reverted to original card style and text colors */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl mb-8 text-center">
-            Portal Outlook
-          </h2>
-          <p className="text-center text-gray-600 mb-8">
-            A glimpse into the powerful tools at your disposal.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { name: "Main Page", description: "A central hub for accessing all features and an overview of your ecosystem's performance." },
-              { name: "Chat Module", description: "Engage with customers in real-time, automate responses, and manage conversations efficiently." },
-              { name: "Broadcasting Module", description: "Send targeted marketing messages, promotions, and updates to your customer segments." },
-              { name: "Mini CRM", description: "Manage customer data, track interactions, and build detailed profiles for personalized engagement." },
-              { name: "AI Model Management", description: "Train, update, and manage your custom AI models to ensure they align with your business needs." },
-              { name: "Engagement Records", description: "Keep a comprehensive log of all customer interactions and engagement activities." },
-              { name: "Sentiment Statistic", description: "Analyze customer sentiment from conversations to identify trends and areas for improvement." },
-              { name: "Administration and Setting", description: "Configure your ecosystem, manage user access, and customize settings to fit your workflow." },
-              { name: "Dashboard and Analytics", description: "Visualize key metrics, track performance, and gain actionable insights from your data." }
-            ].map(item => (
-              <div key={item.name} className="bg-white p-6 rounded-lg shadow-lg flex flex-col"> {/* Original card style */}
-                <div className="h-32 bg-gray-200 rounded-md flex items-center justify-center mb-4">
-                  <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                </div>
-                <h4 className="font-semibold text-gray-800 text-lg mb-2">{item.name}</h4> {/* Original text color */}
-                <p className="text-sm text-gray-600 flex-grow">{item.description}</p>
-              </div>
-            ))}
+        {/* Add a CTA section similar to Insurance Page / Homepage CTA */}
+        <div className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg shadow-xl">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to Elevate Your F&B Business?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              Discover how Chattalyst's AI ecosystem can streamline your operations, boost customer loyalty, and drive growth. Get started today!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#contact"> {/* Update link as needed */}
+                <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-lg shadow-md flex items-center justify-center">
+                  Request a Demo
+                  <ArrowRight size={20} className="ml-2" />
+                </button>
+              </a>
+            </div>
+            <p className="text-blue-100 text-sm mt-6">
+              Personalized Setup • Ongoing Support • Scalable Solutions
+            </p>
           </div>
         </div>
 
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogContent className="sm:max-w-[1275px]">
+            {selectedImage && (
+              <img src={selectedImage} alt="Preview" className="w-full object-contain" />
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );

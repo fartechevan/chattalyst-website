@@ -10,14 +10,18 @@ interface SolutionCardProps {
 }
 
 const SolutionCard: React.FC<SolutionCardProps> = ({ icon, title, description, href, onClick }) => (
-  <Link to={href} onClick={onClick} className="block bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+  <Link
+    to={href}
+    onClick={onClick}
+    className="block bg-gradient-to-br from-yellowai_primary_purple to-yellowai_dark_purple p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+  >
     <div className="flex items-center mb-4">
-      <div className="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+      <div className="bg-yellowai_accent_yellow text-yellowai_dark_purple p-3 rounded-full mr-4">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
+      <h3 className="text-xl font-semibold text-yellowai_text_light">{title}</h3>
     </div>
-    <p className="text-gray-600">{description}</p>
+    <p className="text-gray-200">{description}</p>
   </Link>
 );
 

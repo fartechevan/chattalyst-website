@@ -1,6 +1,6 @@
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
-import { FnbSolution } from "@/components/FnbSolution"; // This component will be created next
+import { FnbSolution } from "@/components/FnbSolution";
 
 const FnbPage = () => {
   return (
