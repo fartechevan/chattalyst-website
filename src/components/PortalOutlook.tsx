@@ -5,7 +5,7 @@ import {
   DialogContent,
 } from "@/components/ui/dialog";
 
-interface PortalOutlookProps {}
+type PortalOutlookProps = Record<string, never>; // Use Record<string, never> for an empty object type
 
 export const PortalOutlook: React.FC<PortalOutlookProps> = () => {
   const [flippedCard, setFlippedCard] = useState<string | null>(null);
@@ -50,10 +50,10 @@ export const PortalOutlook: React.FC<PortalOutlookProps> = () => {
               onMouseEnter={() => handleMouseEnter(item.name)}
               onMouseLeave={handleMouseLeave}
             >
-              {/* Front of the card */}
-              <div className="absolute w-full h-full backface-hidden bg-gray-50 rounded-2xl p-8 flex flex-col justify-center items-center">
-                <div className="bg-gradient-to-r from-blue-600 to-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                  {item.icon && <item.icon size={24} className="text-white" />}
+              {/* Front of the card (Default State) */}
+              <div className="absolute w-full h-full backface-hidden bg-gray-100 rounded-2xl p-8 flex flex-col justify-center items-center">
+                <div className="bg-yellowai_accent_yellow text-yellowai_dark_purple w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                  {item.icon && <item.icon size={24} />}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3 text-center">
                   {item.name}
@@ -63,9 +63,9 @@ export const PortalOutlook: React.FC<PortalOutlookProps> = () => {
                 </p>
               </div>
 
-              {/* Back of the card */}
-              <div 
-                className="absolute w-full h-full backface-hidden bg-gray-50 rounded-2xl p-8 flex items-center justify-center rotate-y-180"
+              {/* Back of the card (Hover State - Flipped) */}
+              <div
+                className="absolute w-full h-full backface-hidden bg-gradient-to-br from-yellowai_primary_purple to-yellowai_dark_purple rounded-2xl p-8 flex items-center justify-center rotate-y-180"
                 onClick={() => {
                   setSelectedImage(item.image);
                   setOpen(true);
