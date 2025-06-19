@@ -37,7 +37,7 @@ export const Hero = () => {
         {/* New UI Section from Image - Start */}
         <div className="mb-12">
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            <span className="text-purple-600">Autonomous Service</span>
+            <span className="text-purple-600">Agentic AI</span>
             <br />
             <span className="text-gray-900">with Human-Like Experience</span>
           </h1>
@@ -97,7 +97,7 @@ export const Hero = () => {
           <div className="animate-fade-in text-left"> 
             <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
               <MessageSquare size={16} className="mr-2" />
-              #1 WhatsApp Business Solution for Autonomous Service
+              #1 WhatsApp Business Solution for Agentic AI
             </div>
             
             {/* The main H1 and paragraph are now from the new UI section above */}
