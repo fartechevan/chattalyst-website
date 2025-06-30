@@ -40,8 +40,8 @@ export const Features = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Powerful Features for
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Modern Businesses</span>
+            Powerful Features to Automate Sales with an
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> AI Chatbot</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Everything you need to automate, scale, and optimize your WhatsApp business communication.

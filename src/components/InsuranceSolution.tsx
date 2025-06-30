@@ -115,9 +115,9 @@ export const InsuranceSolution = () => {
         <div className="text-center mb-16 md:mb-20">
           <ShieldCheck className="mx-auto h-16 w-16 text-purple-600 mb-6" />
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="text-purple-600">AI-Powered Solutions</span>
+            <span className="text-purple-600">AI Chatbot for Insurance:</span>
             <br />
-            <span className="text-gray-900">for Insurance Agencies</span>
+            <span className="text-gray-900">Automate Your Agency's Sales</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10">
             Transform your insurance agency with intelligent automation, enhanced customer engagement, and data-driven insights. Our platform is designed to streamline your operations, boost sales, and deliver exceptional client experiences.

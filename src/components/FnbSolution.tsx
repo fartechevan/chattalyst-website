@@ -20,9 +20,9 @@ export const FnbSolution = () => {
         {/* Section 1: Title - Styled like Hero */}
         <div className="text-center mb-16 pt-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="text-purple-600">Enhancing F&B with</span>
+            <span className="text-purple-600">AI Chatbot for F&B:</span>
             <br />
-            <span className="text-gray-900">AI Ecosystem</span>
+            <span className="text-gray-900">Automate Your Restaurant Operations</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10">
             Leveraging LLM and Vision AI to revolutionize your Food & Beverage operations.

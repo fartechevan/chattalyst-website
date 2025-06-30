@@ -59,6 +59,9 @@ export const Footer = () => {
             Built with ❤️ for modern businesses
           </p>
         </div>
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+          <p>Serving businesses in Malaysia (Kuala Lumpur, Selangor) and Singapore.</p>
+        </div>
       </div>
     </footer>
   );

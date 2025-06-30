@@ -38,7 +38,7 @@ export const Navigation = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link to="/"> {/* Wrap logo with Link to homepage */}
-                <img src={logoUrl} alt="Chattalyst Logo" className="h-16 w-auto" />
+                <img src={logoUrl} alt="Chattalyst - AI Chatbot for Sales Automation" className="h-16 w-auto" />
               </Link>
             </div>
           </div>
@@ -80,12 +80,12 @@ export const Navigation = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <a href="https://app.chattalyst.com/dashboard" target="_blank" rel="noopener noreferrer">
+            <a href="https://app.chattalyst.com/dashboard" target="_blank" rel="noopener noreferrer" data-tracking-id="cta-nav-login">
               <Button variant="ghost" className="text-gray-700">
                 Login
               </Button>
             </a>
-            <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer" data-tracking-id="cta-nav-start-free-trial">
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                 Start Free Trial
               </Button>
@@ -139,10 +139,10 @@ export const Navigation = () => {
                 )}
               </div>
               <div className="pt-4 pb-3 border-t border-gray-200">
-                <a href="https://app.chattalyst.com/dashboard" target="_blank" rel="noopener noreferrer" className="block w-full">
+                <a href="https://app.chattalyst.com/dashboard" target="_blank" rel="noopener noreferrer" className="block w-full" data-tracking-id="cta-mobile-nav-login">
                   <Button variant="ghost" className="w-full mb-2">Login</Button>
                 </a>
-                <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer" className="block w-full">
+                <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer" className="block w-full" data-tracking-id="cta-mobile-nav-start-free-trial">
                   <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">
                     Start Free Trial
                   </Button>

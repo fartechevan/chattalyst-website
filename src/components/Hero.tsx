@@ -37,12 +37,12 @@ export const Hero = () => {
         {/* New UI Section from Image - Start */}
         <div className="mb-12">
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            <span className="text-purple-600">Agentic AI</span>
+            <span className="text-purple-600">Agentic AI Chatbot</span>
             <br />
-            <span className="text-gray-900">with Human-Like Experience</span>
+            <span className="text-gray-900">with a Human-Like Experience</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8">
-            Pioneering Agentic AI for transformative service automation and human-like customer experiences.
+            Pioneering Agentic AI to automate sales and customer service with a human-like experience.
           </p>
           <div className="max-w-2xl mx-auto mb-8">
             <div 
@@ -71,18 +71,21 @@ export const Hero = () => {
             <Button 
               className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base"
               onClick={() => handleChatClick("Book Demo Today")}
+              data-tracking-id="cta-hero-book-demo"
             >
               Book Demo Today
             </Button>
             <Button 
               className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base"
               onClick={() => handleChatClick("Explore Case Studies")}
+              data-tracking-id="cta-hero-explore-case-studies"
             >
               Explore Case Studies
             </Button>
             <Button 
               className="bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-full px-6 py-3 text-base"
               onClick={() => handleChatClick("Agentic AI Advantage")}
+              data-tracking-id="cta-hero-agentic-ai-advantage"
             >
               Agentic AI Advantage
             </Button>
@@ -109,7 +112,7 @@ export const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               {/* This button can be styled to match the new UI's buttons or kept distinct */}
-              <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer" data-tracking-id="cta-hero-start-free-trial">
                 <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg shadow-lg">
                   Start Your Free Trial Now
                 </Button>
@@ -129,6 +132,10 @@ export const Hero = () => {
                 <CheckCircle size={16} className="text-green-500 mr-2" />
                 Cancel anytime
               </div>
+            </div>
+            <div className="mt-8 text-left">
+              <h4 className="font-semibold text-lg">Transparent Pricing, Powerful Features</h4>
+              <p className="text-gray-600">We believe in transparent pricing with no hidden costs. Our platform is truly agentic, and we offer white-labeling and custom CRM solutions to fit your business needs.</p>
             </div>
           </div>
 
