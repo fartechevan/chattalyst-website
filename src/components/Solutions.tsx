@@ -51,7 +51,7 @@ export const Solutions = () => {
                 Easily get started with a personalized product tour
               </h2>
               <p className="mt-4 text-lg">
-                An <u>onboarding specialist</u> is available during the first 90 days to help you get started with confidence –it’s already included with professional and enterprise plans.*
+                An onboarding specialist is available during the first 90 days to help you get started with confidence –it’s already included with professional and enterprise plans.*
               </p>
               <div className="mt-8">
                 <a href="#" className="inline-block bg-yellowai_accent_yellow text-yellowai_dark_purple font-bold py-3 px-6 rounded-lg">
