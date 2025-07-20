@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"; // Added Input import
 import { Play, CheckCircle, MessageSquare, Bot, RefreshCw } from "lucide-react";
 import { useState } from "react"; // Added useState import
+import { WhatsAppButton } from "./WhatsAppButton";
 
 export const Hero = () => {
   const [isChatting, setIsChatting] = useState(false);
@@ -22,8 +23,9 @@ export const Hero = () => {
   const handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter" && chatMessage.trim() !== "") {
       event.preventDefault();
-      const whatsappNumber = "60175168607";
-      const encodedMessage = encodeURIComponent(chatMessage);
+      const whatsappNumber = "6017518607";
+      const message = chatMessage || "I want to know more about whatsapp agent chatbot";
+      const encodedMessage = encodeURIComponent(message);
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
       window.open(whatsappUrl, "_blank");
       setChatMessage("");
@@ -97,7 +99,7 @@ export const Hero = () => {
         {/* The right side (image/chat mockup) will be part of this grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-center pt-12 border-t border-gray-200">
           {/* Left side content - primarily from the original second section, but integrated */}
-          <div className="animate-fade-in text-left"> 
+          <div id="about" className="animate-fade-in text-left">
             <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
               <MessageSquare size={16} className="mr-2" />
               #1 WhatsApp Business Solution for Agentic AI
@@ -112,11 +114,13 @@ export const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               {/* This button can be styled to match the new UI's buttons or kept distinct */}
-              <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer" data-tracking-id="cta-hero-start-free-trial">
-                <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg shadow-lg">
-                  Start Your Free Trial Now
-                </Button>
-              </a>
+              <WhatsAppButton
+                size="lg"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg shadow-lg"
+                data-tracking-id="cta-hero-start-free-trial"
+              >
+                Start Your Free Trial Now
+              </WhatsAppButton>
             </div>
 
             <div className="flex items-center space-x-6 text-sm text-gray-700">

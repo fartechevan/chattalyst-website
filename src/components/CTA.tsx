@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { WhatsAppButton } from "./WhatsAppButton";
 
 export const CTA = () => {
   return (
@@ -14,12 +15,13 @@ export const CTA = () => {
           and boost their sales. Start your free trial today!
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg">
-              Start Free Trial
-              <ArrowRight size={20} className="ml-2" />
-            </Button>
-          </a>
+          <WhatsAppButton
+            size="lg"
+            className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg"
+          >
+            Start Free Trial
+            <ArrowRight size={20} className="ml-2" />
+          </WhatsAppButton>
         </div>
         <p className="text-blue-100 text-sm mt-6">
           No setup fees • 14-day free trial • Cancel anytime

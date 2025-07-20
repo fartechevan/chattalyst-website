@@ -4,6 +4,7 @@ import { Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom"; // Import Link, useLocation, and useNavigate
 import logoUrl from "../../assets/chattalyst-logo.png";
+import { WhatsAppButton } from "./WhatsAppButton";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -85,11 +86,12 @@ export const Navigation = () => {
                 Login
               </Button>
             </a>
-            <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer" data-tracking-id="cta-nav-start-free-trial">
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                Start Free Trial
-              </Button>
-            </a>
+            <WhatsAppButton
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+              data-tracking-id="cta-nav-start-free-trial"
+            >
+              Start Free Trial
+            </WhatsAppButton>
           </div>
 
           <div className="md:hidden">
@@ -142,11 +144,12 @@ export const Navigation = () => {
                 <a href="https://app.chattalyst.com/dashboard" target="_blank" rel="noopener noreferrer" className="block w-full" data-tracking-id="cta-mobile-nav-login">
                   <Button variant="ghost" className="w-full mb-2">Login</Button>
                 </a>
-                <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer" className="block w-full" data-tracking-id="cta-mobile-nav-start-free-trial">
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">
-                    Start Free Trial
-                  </Button>
-                </a>
+                <WhatsAppButton
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600"
+                  data-tracking-id="cta-mobile-nav-start-free-trial"
+                >
+                  Start Free Trial
+                </WhatsAppButton>
               </div>
             </div>
           </div>

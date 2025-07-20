@@ -43,7 +43,7 @@ export const Solutions = () => {
 
   return (
     <>
-      <section id="demo" className="py-16 bg-gradient-to-br from-yellowai_primary_purple to-yellowai_dark_purple">
+      <section id="solutions-section" className="py-16 bg-gradient-to-br from-yellowai_primary_purple to-yellowai_dark_purple">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="text-white">

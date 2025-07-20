@@ -1,11 +1,10 @@
-import { MessageSquare, Twitter, Linkedin, Github } from "lucide-react";
+import { Facebook, Linkedin } from "lucide-react";
 
 export const Footer = () => {
   const footerLinks = {
-    Product: ["Features", "Pricing", "API", "Integrations"],
-    Company: ["About", "Blog", "Careers", "Press"],
-    Resources: ["Documentation", "Help Center", "Community", "Contact"],
-    Legal: ["Privacy", "Terms", "Security", "Compliance"]
+    Product: ["Features", "Pricing"],
+    Solutions: ["F&B", "Insurance"],
+    Company: ["About", "Blog", "Contact", "Testimonials"],
   };
 
   return (
@@ -19,18 +18,14 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-gray-400 mb-6 max-w-sm">
-              The most powerful WhatsApp business automation platform. 
-              Transform your customer communication today.
+              Pioneering Agentic AI to automate sales and customer service with a human-like experience.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={20} />
+              <a href="https://www.facebook.com/profile.php?id=61577637883935" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/chattalyst/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Github size={20} />
               </a>
             </div>
           </div>
@@ -41,7 +36,26 @@ export const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                    <a
+                      href={
+                        link === "Pricing"
+                          ? "#pricing"
+                          : link === "Features"
+                          ? "#features"
+                          : link === "Contact"
+                          ? "#contact"
+                          : link === "About"
+                          ? "#about"
+                          : link === "F&B"
+                          ? "/fnb"
+                          : link === "Insurance"
+                          ? "/insurance"
+                          : link === "Testimonials"
+                          ? "#testimonials"
+                          : "#"
+                      }
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
                       {link}
                     </a>
                   </li>
@@ -55,12 +69,6 @@ export const Footer = () => {
           <p className="text-gray-400 text-sm">
             © 2025 Chattalyst. All rights reserved.
           </p>
-          <p className="text-gray-400 text-sm mt-4 md:mt-0">
-            Built with ❤️ for modern businesses
-          </p>
-        </div>
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>Serving businesses in Malaysia (Kuala Lumpur, Selangor) and Singapore.</p>
         </div>
       </div>
     </footer>

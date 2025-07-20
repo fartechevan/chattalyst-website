@@ -1,12 +1,13 @@
 
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Star } from "lucide-react";
+import { WhatsAppButton } from "./WhatsAppButton";
 
 export const Pricing = () => {
   const plans = [
     {
       name: "Starter",
-      price: "RM 499",
+      price: "US$ 199",
       period: "/month",
       description: "Perfect for small businesses getting started",
       features: [
@@ -20,7 +21,7 @@ export const Pricing = () => {
     },
     {
       name: "Professional",
-      price: "RM 999",
+      price: "US$ 399",
       period: "/month",
       description: "Best for growing businesses",
       features: [
@@ -89,7 +90,24 @@ export const Pricing = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
                 <p className="text-gray-600 mb-4">{plan.description}</p>
                 <div className="flex items-baseline justify-center">
-                  <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                  {plan.price === "Call Now!" ? (
+                    <span
+                      className="text-4xl font-bold text-gray-900"
+                      style={{ fontSize: "36px" }}
+                    >
+                      {plan.price}
+                    </span>
+                  ) : (
+                    <span
+                      className="text-4xl font-bold text-gray-900"
+                      style={{ fontSize: "36px" }}
+                    >
+                      <span style={{ fontSize: "0.555556em" }}>
+                        {plan.price.split(" ")[0]}&nbsp;
+                      </span>
+                      {plan.price.split(" ")[1]}
+                    </span>
+                  )}
                   <span className="text-gray-600 ml-1">{plan.period}</span>
                 </div>
               </div>
@@ -103,17 +121,15 @@ export const Pricing = () => {
                 ))}
               </ul>
 
-              <a href="https://wa.me/601157774301" target="_blank" rel="noopener noreferrer" className="w-full">
-                <Button 
-                  className={`w-full py-3 ${
-                    plan.popular 
-                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700' 
-                      : 'bg-gray-900 hover:bg-gray-800'
-                  }`}
-                >
-                  Start Free Trial
-                </Button>
-              </a>
+              <WhatsAppButton
+                className={`w-full py-3 ${
+                  plan.popular
+                    ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                    : "bg-gray-900 hover:bg-gray-800"
+                }`}
+              >
+                Start Free Trial
+              </WhatsAppButton>
             </div>
           ))}
         </div>
