@@ -1,4 +1,5 @@
 import { ShieldCheck, MessageSquare, Users, LineChart, Send, Target, ArrowRight, CheckCircle } from 'lucide-react'; // Added ArrowRight and CheckCircle
+import { WhatsAppButton } from './WhatsAppButton';
 
 // This FeatureCard is not used in the final component, but kept for now if needed elsewhere or as reference.
 // If it's confirmed as unused, it can be removed.
@@ -186,12 +187,12 @@ export const InsuranceSolution = () => {
               Discover how Chattalyst can help you automate processes, improve client communication, and drive growth. Schedule a personalized demo today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#contact"> {/* Assuming you have a contact section with this ID or update link */}
-                <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-lg shadow-md flex items-center justify-center">
-                  Request a Free Demo
-                  <ArrowRight size={20} className="ml-2" />
-                </button>
-              </a>
+              <WhatsAppButton
+                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-lg shadow-md flex items-center justify-center"
+              >
+                Request a Free Demo
+                <ArrowRight size={20} className="ml-2" />
+              </WhatsAppButton>
             </div>
             <p className="text-blue-100 text-sm mt-6">
               No setup fees • Personalized Demo • Expert Consultation

@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dialog"
 import { useState } from "react";
 import { ArrowRight } from "lucide-react"; // Added ArrowRight import
+import { WhatsAppButton } from "./WhatsAppButton";
 
 export const FnbSolution = () => {
   const [open, setOpen] = useState(false);
@@ -173,12 +174,12 @@ export const FnbSolution = () => {
               Discover how Chattalyst's AI ecosystem can streamline your operations, boost customer loyalty, and drive growth. Get started today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#contact"> {/* Update link as needed */}
-                <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-lg shadow-md flex items-center justify-center">
-                  Request a Demo
-                  <ArrowRight size={20} className="ml-2" />
-                </button>
-              </a>
+              <WhatsAppButton
+                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-lg shadow-md flex items-center justify-center"
+              >
+                Request a Demo
+                <ArrowRight size={20} className="ml-2" />
+              </WhatsAppButton>
             </div>
             <p className="text-blue-100 text-sm mt-6">
               Personalized Setup • Ongoing Support • Scalable Solutions
