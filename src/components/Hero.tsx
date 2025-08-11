@@ -23,7 +23,7 @@ export const Hero = () => {
   const handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter" && chatMessage.trim() !== "") {
       event.preventDefault();
-      const whatsappNumber = "6017518607";
+      const whatsappNumber = "601157774301";
       const message = chatMessage || "I want to know more about whatsapp agent chatbot";
       const encodedMessage = encodeURIComponent(message);
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;

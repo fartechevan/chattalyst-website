@@ -13,7 +13,7 @@ export const Contact = () => {
     const interest = "I am interested in your Agents Bot Service.";
     const remark = `remark: ${message}`;
     const whatsappMessage = `${greeting}\n${interest}\n${remark}`;
-    const whatsappUrl = `https://wa.me/6017518607?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/601157774301?text=${encodeURIComponent(
       whatsappMessage
     )}`;
     window.open(whatsappUrl, "_blank");
@@ -91,8 +91,8 @@ export const Contact = () => {
                   Prefer to chat? Give us a call Monday–Friday, 9 AM–5 PM.
                 </p>
                 <div className="text-sm text-muted-foreground">
-                  <a href="tel:6017518607" className="font-bold">
-                    +6017518607
+                  <a href="tel:601157774301" className="font-bold">
+                    +601157774301
                   </a>
                 </div>
               </div>

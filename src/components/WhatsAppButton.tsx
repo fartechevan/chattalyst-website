@@ -14,7 +14,7 @@ const handleWhatsAppClick = (phoneNumber: string, message: string) => {
 };
 
 export const WhatsAppButton = ({
-  phoneNumber = "6017518607",
+  phoneNumber = "601157774301",
   message = "I want to know more about whatsapp agent chatbot",
   children,
   ...props
